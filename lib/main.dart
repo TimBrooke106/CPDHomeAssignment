@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'ui/home_screen.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const ProviderScope(child: SnapNoteApp()));
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class SnapNoteApp extends StatelessWidget {
+  const SnapNoteApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      title: 'SnapNote',
+      theme: ThemeData(useMaterial3: true),
+      home: const HomeScreen(),
     );
   }
 }
