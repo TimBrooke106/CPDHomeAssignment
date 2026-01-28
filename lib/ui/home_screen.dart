@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../state/note_provider.dart';
 import 'add_note_screen.dart';
+import 'dart:io';
+
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -19,6 +21,17 @@ class HomeScreen extends ConsumerWidget {
               itemBuilder: (context, i) {
                 final n = notes[i];
                 return ListTile(
+                  leading: (n.imagePath == null)
+                  ? const Icon(Icons.note)
+                  : ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: Image.file(
+                        File(n.imagePath!),
+                        width: 48,
+                        height: 48,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   title: Text(n.title),
                   subtitle: Text(
                     n.body,
