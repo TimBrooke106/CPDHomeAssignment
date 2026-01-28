@@ -6,6 +6,10 @@ import 'state/note_provider.dart';
 import 'ui/home_screen.dart';
 import 'services/notification_service.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+
+
 final notificationServiceProvider =
     Provider<NotificationService>((ref) => throw UnimplementedError());
 
@@ -19,6 +23,7 @@ Future<void> main() async {
   final notifications = NotificationService();
   await notifications.init();
 
+  await Firebase.initializeApp();
 
   runApp(
     ProviderScope(

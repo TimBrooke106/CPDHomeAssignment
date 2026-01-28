@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/note.dart';
@@ -57,7 +58,10 @@ class _AddNoteScreenState extends ConsumerState<AddNoteScreen> {
 
     await ref.read(notesProvider.notifier).add(note);
     await ref.read(notificationServiceProvider).showNoteSaved();
-    
+
+    await FirebaseAnalytics.instance.logEvent(
+      name: "note_saved",
+    );
     if (mounted) Navigator.pop(context);
   }
 
