@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "32215506048",
+    "project_id": "cpd-homeassignment",
+    "storage_bucket": "cpd-homeassignment.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32215506048:android:09434b0ad5e42e21f65a65",
+        "android_client_info": {
+          "package_name": "com.example.home_assignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtLAt-YzAg9lzE9RVJElK_9Xzb5z8Te00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
