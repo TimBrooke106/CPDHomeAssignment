@@ -4,6 +4,8 @@ import '../models/note.dart';
 import '../state/note_provider.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
+import '../main.dart';
+
 
 
 class AddNoteScreen extends ConsumerStatefulWidget {
@@ -53,10 +55,10 @@ class _AddNoteScreenState extends ConsumerState<AddNoteScreen> {
 
     await ref.read(notesProvider.notifier).add(note);
 
+    await ref.read(notesProvider.notifier).add(note);
+    await ref.read(notificationServiceProvider).showNoteSaved();
+    
     if (mounted) Navigator.pop(context);
-
-
-
   }
 
   @override
