@@ -34,7 +34,7 @@ class HomeScreen extends ConsumerWidget {
                     ),
                   title: Text(n.title),
                   subtitle: Text(
-                    (n.body * 30),
+                    n.body,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
